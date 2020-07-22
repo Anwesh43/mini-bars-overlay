@@ -6,7 +6,7 @@ const Block = ({style}) => {
     </div>
 }
 
-const getDynamicBlocks = (i, style) => {
+const getDynamicBlocks = (n, style) => {
   const blocks = []
   for (let i = 0; i < n; i++) {
     blocks.push(<Block key = {`dynamic_block_${i}`} style = {style(i)}/>)
@@ -18,7 +18,7 @@ const MiniBarOverlay = ({w, h, scale, n, onClick}) => {
   const {getFixedBlockStyle, getDynamicBlockStyle} = useStyle(w, h, scale, n)
   return <div onClick = {onClick}>
       <Block style = {getFixedBlockStyle()}/>
-      {getDynamicBlocks(i, getDynamicBlockStyle)}
+      {getDynamicBlocks(n, getDynamicBlockStyle)}
     </div>
 }
 

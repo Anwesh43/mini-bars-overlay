@@ -13,7 +13,7 @@ export const useAnimatedScale = (scGap = 0.02, delay = 20) => {
         const interval = setInterval(() => {
           currScale += scGap 
           setScale(currScale)
-          if (scale > 1) {
+          if (currScale > 1) {
             setScale(0)
             setAnimated(false)
             clearInterval(interval)
@@ -38,6 +38,10 @@ export const useDimension = () => {
       }
     }
   })
+  return {
+    w, 
+    h
+  }
 }
 
 export const useStyle = (w, h, scale, n) => {

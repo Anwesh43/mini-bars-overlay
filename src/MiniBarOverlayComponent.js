@@ -6,7 +6,7 @@ const MiniBarOverlayComponent = ({n}) => {
   const {w, h} = useDimension()
   const {scale, start} = useAnimatedScale(0.02 / n, 20)
   return (<div>
-      <MiniBarOverlay w = {w} h = {h} scale = {scale} n = {n}></MiniBarOverlay>
+      <MiniBarOverlay w = {w} h = {h} scale = {scale} n = {n} onClick = {start}></MiniBarOverlay>
     </div>)
 }
 
